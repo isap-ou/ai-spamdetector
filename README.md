@@ -39,12 +39,12 @@ The `FormData` class acts as a structured container for submitted form data. It 
 
 ```php
 new FormData(
+    string $email,
+    string $message,
     ?string $name = null,
     ?string $firstName = null,
     ?string $lastName = null,
     ?string $phoneNumber = null,
-    ?string $email,
-    string $message,
     ?string $userAgent = null
 )
 ```
