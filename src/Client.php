@@ -12,18 +12,19 @@ class Client
         protected ?string $project = null,
         protected string $baseUri = 'api.openai.com/v1',
         protected string $model = 'gpt-4',
-    ) {
-    }
+    ) {}
 
     public function setApiKey(string $apiKey): static
     {
         $this->apiKey = $apiKey;
+
         return $this;
     }
 
     public function setModel(string $model): static
     {
         $this->model = $model;
+
         return $this;
     }
 
@@ -35,18 +36,21 @@ class Client
     public function setOrganization(?string $organization = null): static
     {
         $this->organization = $organization;
+
         return $this;
     }
 
     public function setProject(?string $project = null): static
     {
         $this->project = $project;
+
         return $this;
     }
 
     public function setBaseUri(string $baseUri): static
     {
         $this->baseUri = $baseUri;
+
         return $this;
     }
 
@@ -65,6 +69,7 @@ class Client
         if (! empty($this->baseUri)) {
             $factory->withBaseUri($this->baseUri);
         }
+
         return $factory->make();
     }
 }

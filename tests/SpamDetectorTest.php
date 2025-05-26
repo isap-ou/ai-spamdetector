@@ -12,7 +12,7 @@ class SpamDetectorTest extends TestCase
     private SpamDetector $detector;
 
     #[Test]
-    public function analyzeSpam(): void
+    public function analyze_spam(): void
     {
         $formData = new FormData(
             message: 'Congratulations! You are selected for a limited offer!!! Click here 👉 http://bit.ly/xyz',
@@ -26,9 +26,8 @@ class SpamDetectorTest extends TestCase
         $this->assertFalse($result);
     }
 
-
     #[Test]
-    public function analyzeValidMessage(): void
+    public function analyze_valid_message(): void
     {
         $formData = new FormData(
             message: 'Hi, I would like more information about your services.',
@@ -44,7 +43,7 @@ class SpamDetectorTest extends TestCase
     }
 
     #[Test]
-    public function analyzeEmptyData(): void
+    public function analyze_empty_data(): void
     {
         $formData = new FormData(
             message: '',
@@ -60,12 +59,11 @@ class SpamDetectorTest extends TestCase
 
     protected function setUp(): void
     {
-        if (file_exists(__DIR__ . '/../.env')) {
-            (Dotenv::createImmutable(__DIR__ . '/../'))->load();
+        if (file_exists(__DIR__.'/../.env')) {
+            (Dotenv::createImmutable(__DIR__.'/../'))->load();
         }
         $apiKey = $_ENV['OPENAI_API_KEY'] ?? getenv('OPENAI_API_KEY');
         $organization = $_ENV['OPENAI_ORGANIZATION'] ?? getenv('OPENAI_ORGANIZATION');
         $this->detector = new SpamDetector(new Client($apiKey, $organization));
     }
-
 }

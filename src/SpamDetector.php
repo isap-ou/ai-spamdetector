@@ -10,8 +10,7 @@ class SpamDetector
 
     public function __construct(
         readonly protected Client $client,
-    ) {
-    }
+    ) {}
 
     public function analyze(FormData $dto): bool
     {
@@ -38,12 +37,13 @@ class SpamDetector
     public function setPrompt(string $prompt): static
     {
         $this->prompt = $prompt;
+
         return $this;
     }
 
     protected function getDefaultPrompt(): string
     {
-        return <<<PROMPT
+        return <<<'PROMPT'
 You are an AI spam detection engine. Analyze the input JSON.
 Return exactly "SPAM" or "OK". No explanation.
 

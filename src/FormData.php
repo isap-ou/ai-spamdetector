@@ -13,9 +13,7 @@ class FormData
         readonly public ?string $phoneNumber = null,
         readonly public ?string $userAgent = null,
         readonly public ?string $ip = null,
-    ) {
-    }
-
+    ) {}
 
     /**
      * @throws \JsonException
