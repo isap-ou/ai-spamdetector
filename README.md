@@ -106,7 +106,7 @@ All setters return `$this`, allowing fluent configuration.
 ## Contributing
 
 Contributions are welcome! If you have suggestions for improvements, new features, or find any issues, feel free to
-submit a pull request or open an [issue](https://github.com/isap-ou/laravel-agile-crm/issues) in this repository.
+submit a pull request or open an [issue](https://github.com/isap-ou/ai-spamdetector/issues) in this repository.
 
 Thank you for helping make this package better for the community!
 
